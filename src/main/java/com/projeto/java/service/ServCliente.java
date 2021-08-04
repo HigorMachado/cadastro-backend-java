@@ -2,6 +2,7 @@ package com.projeto.java.service;
 
 import com.projeto.java.entity.Cliente;
 import com.projeto.java.repository.RepCliente;
+ 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,7 @@ public class ServCliente {
 
     public Cliente salvaCliente(Cliente cliente) {
         return _RepCliente.saveAndFlush(cliente);
+
     }
 
 }

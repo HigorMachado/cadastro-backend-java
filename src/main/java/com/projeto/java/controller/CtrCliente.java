@@ -15,17 +15,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api/cliente")
 public class CtrCliente {
 
-    private final ServCliente _servCliente;
+    private final ServCliente _servCliente; 
 
     @Autowired
     public CtrCliente(ServCliente servCliente) {
         this._servCliente = servCliente;
     }
+     
+ 
 
     @PostMapping("/novo")
     public ResponseEntity<Cliente> cadastrarCliente(@RequestBody Cliente cliente) {
 
         Cliente clienteRetorno = _servCliente.salvaCliente(cliente);
+        
+        //Endereco enderecoRetorno = _servEndereco.salvaEnderco(endereco);
         
         return new ResponseEntity<Cliente>(clienteRetorno, HttpStatus.CREATED);
     }
