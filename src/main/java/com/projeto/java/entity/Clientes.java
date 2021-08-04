@@ -33,11 +33,11 @@ public class Clientes {
     @Column(nullable = false)
     private String telefone;
 
-    // @OneToMany(cascade = CascadeType.ALL)
-    // @JoinColumn(name = "codigo_cliente")
-    // private List<Telefone> telefones = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "codigo_cliente")
+    private List<Telefone> telefones = new ArrayList<>();
 
-    // @OneToMany(cascade = CascadeType.ALL)
-    // @JoinColumn(name = "codigo_cliente")
-    // private List<Endereco> enderecos = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "codigo_cliente")
+    private List<Endereco> enderecos = new ArrayList<>();
 }
