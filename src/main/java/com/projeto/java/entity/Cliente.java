@@ -10,7 +10,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+
 
 import lombok.Data;
 
@@ -32,6 +36,13 @@ public class Cliente {
 
     @Column(nullable = false)
     private String telefone;
+
+
+/*@ManyToMany
+@JoinTable(name="cliente_endereco", joinColumns=
+    {@JoinColumn(name="codigo_cliente")}, inverseJoinColumns=
+      {@JoinColumn(name="codigo_endereco")})*/
+
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "codigo_cliente")
